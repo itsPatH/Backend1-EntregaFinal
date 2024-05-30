@@ -59,7 +59,7 @@ export class ProductManager {
   };
 
   updateProduct = async (id, { ...data }) => {
-    const response = this.getProducts();
+    const response = await this.getProducts();
     const index = response.findIndex((product) => product.id === id);
 
     if (index != -1) {
@@ -72,7 +72,7 @@ export class ProductManager {
   };
 
   deleteProduct = async (id) => {
-    const products = this.getProducts();
+    const products = await this.getProducts();
     const index = response.findIndex((product) => product.id === id);
 
     if (index != -1) {
