@@ -14,24 +14,38 @@ app.set('views', './src/views');
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-    res.render ('Home');
-})
+    res.render('Home');
+});
+
+app.get('/users', (req, res) => {
+    res.render('Users');
+});
 
 
-export const productManager = new ProductManager;
-export const cartManager = new CartManager;
+
+app.get('/users/:uid', (req, res) => {
+    const uid = req.params.uid;
+    const userId = parseInt(uid);
+    const user = users.find(u => u.id === userId); 
+
+    if (!user) {
+        return res.render('404', {
+            entity: 'Usuario'
+        });
+    }
+
+    res.render('UserDetails', { user });
+});
+
+export const productManager = new ProductManager();
+export const cartManager = new CartManager();
 
 app.use(express.json());
-
-
-
-app.use(express.static('.src'));
-
-
+app.use(express.static('./src'));
 
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 
 app.listen(PORT, () => {
-  console.log(`El servidor está escuchando en el puerto ${PORT}`);
+    console.log(`El servidor está escuchando en el puerto ${PORT}`);
 });
