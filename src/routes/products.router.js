@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { productManager } from "../index.js";
+import { productManager } from "../app.js";
 
 const productsRouter = Router();
 

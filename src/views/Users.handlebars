@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Búsqueda de usuarios</title>
-</head>
-<body>
-   Búsqueda de usuarios
-</body>
-</html>
+<h1>Users</h1>
+
+{{#each users}}
+{{lookup ../users @app}}
+<div>
+    <p>{{this}}</p>
+</div>
+
+{{/each}}
