@@ -7,6 +7,17 @@
 </head>
 <body>
     <h1 class="text-4xl font-bold text-center text-blue-600 py-4">Lista de discos en formato vinilo</h1>
+    <div class="container">
+    {{#each products}}
+    <div class="card">
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <p><strong>Price:</strong> ${{this.price}}</p>
+        <p><strong>Stock:</strong> {{this.stock}}</p>
+        <p><strong>Code:</strong> {{this.code}}</p>
+    </div>
+    {{/each}}
+</div>
     <a href="/users">Ver Usuarios</a>
 </body>
 </html>

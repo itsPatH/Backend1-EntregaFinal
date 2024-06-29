@@ -1,10 +1,10 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import { Server } from "socket.io";
-import { ProductManager } from "./managers/productManager.js";
-import { CartManager } from "./managers/cartManager.js";
-import { productsRouter } from "./routes/products.router.js";
-import { cartsRouter } from "./routes/carts.router.js";
+import  ProductManager  from "./managers/productManager.js";
+import  CartManager  from "./managers/cartManager.js";
+import  productsRouter  from "./routes/products.router.js";
+import  cartsRouter  from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
 import __dirname from "./utils.js";
 
