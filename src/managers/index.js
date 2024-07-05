@@ -1,5 +1,5 @@
 import ProductManager from "./productManager.js";
-import CartManager from "./cartManager.js";
+import CartManager from "./CartManager.js";
 
 
 

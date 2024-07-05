@@ -32,7 +32,7 @@ socket.on('newProduct', (data) => {
     `;
   productsList.appendChild(productElement);
 
-  // Añadir event listener al botón de eliminar
+ 
   const deleteButton = productElement.querySelector('.delete-btn');
   deleteButton.addEventListener('click', () => {
     console.log(`Deleting product with ID: ${data.id}`); 
@@ -40,7 +40,7 @@ socket.on('newProduct', (data) => {
       .then((response) => {
         if (response.ok) {
           console.log(`Producto con ID: ${data.id} eliminado correctamente`);
-          productElement.remove(); // Eliminar tarjeta del DOM
+          productElement.remove(); 
         } else {
           console.error(`No se pudo eliminar el producto con ID: ${data.id}`);
         }
@@ -57,7 +57,7 @@ socket.on('deleteProduct', async (productId) => {
       return;
     }
     await productsService.deleteProduct(productId);
-    req.io.emit('deleteProduct', productId); // Emitir evento a todos los clientes conectados
+    req.io.emit('deleteProduct', productId);
   } catch (error) {
     console.error('Error al eliminar el producto:', error);
   }

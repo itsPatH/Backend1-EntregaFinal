@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
       case '/api/products':
         dynamicFolder = 'products';
         break;
-      // Add other cases for different routes if needed
+  
     }
     return cb(null, path.join(__dirname, '/public/files/', dynamicFolder));
   },

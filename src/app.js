@@ -1,25 +1,25 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import { Server } from "socket.io";
-import  ProductManager  from "./managers/productManager.js";
-import  CartManager  from "./managers/cartManager.js";
-import  productsRouter  from "./routes/products.router.js";
-import  cartsRouter  from "./routes/carts.router.js";
+import http from 'http';
+import { Server as SocketIOServer } from 'socket.io';
+import ProductManager from "./managers/productManager.js";
+import CartManager from "./managers/cartManager.js";
+import productsRouter from "./routes/products.router.js";
+import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
 import __dirname from "./utils.js";
 
-const PORT = 8080;
 const app = express();
+const server = http.createServer(app);
+const io = new SocketIOServer(server);
 
-const server = app.listen(PORT, () => {
+const PORT = 8080;
+
+server.listen(PORT, () => {
     console.log(`El servidor está escuchando en el puerto ${PORT}`);
 });
-const socketServer = new Server(server);
 
-socketServer.on('connection', (socketClient) => {
-    console.log("Socket conectado");
-});
-
+// Configura Express para el motor de plantillas Handlebars
 app.engine('handlebars', engine());
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'handlebars');
@@ -37,3 +37,9 @@ app.use('/api/carts', cartsRouter);
 // Instancia de los managers
 export const productManager = new ProductManager();
 export const cartManager = new CartManager();
+
+// Configura Socket.IO para escuchar conexiones
+io.on('connection', (socket) => {
+    console.log('Usuario conectado');
+    // Aquí puedes manejar eventos de Socket.IO
+});
