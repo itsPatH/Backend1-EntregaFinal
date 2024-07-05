@@ -19,27 +19,26 @@ server.listen(PORT, () => {
     console.log(`El servidor está escuchando en el puerto ${PORT}`);
 });
 
-// Configura Express para el motor de plantillas Handlebars
+
 app.engine('handlebars', engine());
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'handlebars');
 
-// Configura Express para servir archivos estáticos
 app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+    req.io = io;
+    next();
+  });
 
-// Rutas
 app.use('/', viewsRouter);
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);
 
-// Instancia de los managers
 export const productManager = new ProductManager();
 export const cartManager = new CartManager();
 
-// Configura Socket.IO para escuchar conexiones
 io.on('connection', (socket) => {
     console.log('Usuario conectado');
-    // Aquí puedes manejar eventos de Socket.IO
 });

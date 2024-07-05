@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 {{!< main}}
-<h1>Real-Time Product List</h1>
-<div class="container">
-  <!-- Formulario para agregar nuevos productos -->
-  <div id="form-container">
-    <form id="productsForm">
-      <input type="text" id="title" name="title" placeholder="Title" required>
-      <input type="text" id="description" name="description" placeholder="Description" required>
-      <input type="text" id="code" name="code" placeholder="Code" required>
-      <input type="number" id="price" name="price" placeholder="Price" required>
-      <input type="number" id="stock" name="stock" placeholder="Stock" required>
-      <input type="text" id="category" name="category" placeholder="Category" required>
+<h1 class="text-4xl font-bold text-center text-blue-600 py-4">Real-Time Product List</h1>
+<div class="container mx-auto">
+  <div class="my-6">
+    <form id="productsForm" class="flex flex-wrap gap-2">
+      <input type="text" id="title" name="title" placeholder="Title" required class="border p-2">
+      <input type="text" id="description" name="description" placeholder="Description" required class="border p-2">
+      <input type="text" id="code" name="code" placeholder="Code" required class="border p-2">
+      <input type="number" id="price" name="price" placeholder="Price" required class="border p-2">
+      <input type="number" id="stock" name="stock" placeholder="Stock" required class="border p-2">
+      <input type="text" id="category" name="category" placeholder="Category" required class="border p-2">
       <input type="file" id="thumbnails" name="thumbnails" multiple style="display: none;">
-      <label for="thumbnails" class="custom-file-upload">Choose Files</label>
-      <button type="submit">Add Product</button>
+      <label for="thumbnails" class="custom-file-upload border p-2 cursor-pointer bg-gray-200 hover:bg-gray-300">Choose Files</label>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Product</button>
     </form>
   </div>
-  <!-- Contenedor para mostrar productos -->
-  <div id="products-container">
-    <div id="products-list">
+  <div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {{#each products}}
-      <div class="card" id="product-{{this.id}}" s>
-        <h2>{{this.title}}</h2>
+      <div class="border p-4 rounded shadow-md">
+        <h2 class="text-xl font-bold">{{this.title}}</h2>
         <p>{{this.description}}</p>
         <p><strong>Price:</strong> ${{this.price}}</p>
         <p><strong>Stock:</strong> {{this.stock}}</p>
         <p><strong>Code:</strong> {{this.code}}</p>
         <p><strong>Category:</strong> {{this.category}}</p>
-        <button class="delete-btn" data-id="{{this.id}}">Delete</button>
+        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mt-2">Delete</button>
       </div>
       {{/each}}
     </div>

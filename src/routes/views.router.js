@@ -1,4 +1,4 @@
-import { Router } from "express";
+/*import { Router } from "express";
 
 const router = Router();
 
@@ -29,8 +29,8 @@ router.get('/users/:uid', (req, res) => {
     res.render('UserDetails', { user });
 });
 
-export default router;
-/*
+export default router;*/
+
 import { Router } from 'express';
 import { productsService } from '../managers/index.js';
 
@@ -57,4 +57,4 @@ router.get('/:pid',async(req,res)=>{
   });
 })
 
-export default router;*/
+export default router;

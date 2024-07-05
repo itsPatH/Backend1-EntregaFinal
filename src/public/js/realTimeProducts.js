@@ -1,5 +1,5 @@
 const socket = io();
-console.log('connected from socket');
+console.log('Conectado');
 
 const productsForm = document.getElementById('productsForm');
 const productsList = document.getElementById('products-list');
@@ -39,10 +39,10 @@ socket.on('newProduct', (data) => {
     fetch(`/api/products/${data.id}`, { method: 'DELETE' })
       .then((response) => {
         if (response.ok) {
-          console.log(`Producto con ID: ${data.id} eliminado correctamente`);
+          console.log(`Producto ${data.id} eliminado`);
           productElement.remove(); 
         } else {
-          console.error(`No se pudo eliminar el producto con ID: ${data.id}`);
+          console.error(`No se pudo eliminar el producto ${data.id}`);
         }
       })
       .catch((error) => console.error('Error:', error));
@@ -53,12 +53,12 @@ socket.on('deleteProduct', async (productId) => {
   try {
     const product = await productsService.getProductById(productId);
     if (!product) {
-      console.error(`Producto con ID ${productId} no encontrado para eliminar`);
+      console.error(`Producto ${productId} no encontrado`);
       return;
     }
     await productsService.deleteProduct(productId);
     req.io.emit('deleteProduct', productId);
   } catch (error) {
-    console.error('Error al eliminar el producto:', error);
+    console.error('Error al eliminar', error);
   }
 });

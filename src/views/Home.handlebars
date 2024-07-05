@@ -1,13 +1,15 @@
 {{!< main}}
-<h1>Lista de Productos</h1>
-<div class="container">
+
+<h1 class="text-4xl font-bold text-center text-blue-600 py-4">Lista de Productos</h1>
+
+<div class="container mx-auto">
     {{#each products}}
-    <div class="card">
-        <h2>{{this.title}}</h2>
-        <p>{{this.description}}</p>
-        <p><strong>Price:</strong> ${{this.price}}</p>
-        <p><strong>Stock:</strong> {{this.stock}}</p>
-        <p><strong>Code:</strong> {{this.code}}</p>
+    <div class="bg-white rounded-lg shadow-lg p-4 mb-4">
+        <h2 class="text-xl font-bold mb-2">{{this.title}}</h2>
+        <p class="text-gray-700 mb-2">{{this.description}}</p>
+        <p class="text-gray-900 font-semibold mb-2">Price: ${{this.price}}</p>
+        <p class="text-gray-900 font-semibold mb-2">Stock: {{this.stock}}</p>
+        <p class="text-gray-700 mb-2">Code: {{this.code}}</p>
     </div>
     {{/each}}
 </div>
