@@ -32,6 +32,9 @@ app.use((req, res, next) => {
     next();
   });
 
+  app.get('/', (req, res) => {
+    res.render('home');
+});
 app.use('/', viewsRouter);
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);

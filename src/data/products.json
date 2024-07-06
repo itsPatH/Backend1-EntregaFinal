@@ -1,1 +1,82 @@
-[]
+[
+	{
+		"title": "One Of The Boys",
+		"description": "Esta es una edición especial por el aniversario número 15 del disco 'One Of The Boys'",
+		"code": "OOTB-KATYPERRY",
+		"price": 30,
+		"stock": 10,
+		"category": "Pop",
+		"thumbnails": [
+			{
+				"mimetype": "image/webp",
+				"path": "/files/products/undefined-OneOfTheBoys.webp",
+				"main": true
+			}
+		],
+		"id": 1
+	},
+	{
+		"title": "Teenage Dream",
+		"description": "Esta es una edición estándar del disco 'Teenage Dream' en formato vinilo",
+		"code": "TD-KATYPERRY",
+		"price": 32,
+		"stock": 25,
+		"category": "Pop",
+		"thumbnails": [
+			{
+				"mimetype": "image/webp",
+				"path": "/files/products/undefined-TeenageDream.webp",
+				"main": true
+			}
+		],
+		"id": 2
+	},
+	{
+		"title": "Prism",
+		"description": "Esta es una edición limitada del disco 'Prism' en formato vinilo",
+		"code": "PRISM-KATYPERRY",
+		"price": 37,
+		"stock": 15,
+		"category": "Pop",
+		"thumbnails": [
+			{
+				"mimetype": "image/webp",
+				"path": "/files/products/undefined-Prism.webp",
+				"main": true
+			}
+		],
+		"id": 3
+	},
+	{
+		"title": "Witness",
+		"description": "El cuarto álbum de estudio de Katy Perry, lanzado en 2017, ahora en formato vinilo",
+		"code": "WITNESS-KATYPERRY",
+		"price": 32,
+		"stock": 10,
+		"category": "Pop",
+		"thumbnails": [
+			{
+				"mimetype": "image/jpeg",
+				"path": "/files/products/undefined-Witness.jpg",
+				"main": true
+			}
+		],
+		"id": 4
+	},
+	{
+		"title": "Smile",
+		"description": "Esta es una edición estándar del disco 'Smile' de Katy Perry en formato vinilo",
+		"code": "SMILE-KATYPERRY",
+		"price": 26,
+		"stock": 30,
+		"category": "Pop",
+		"thumbnails": [
+			{
+				"mimetype": "image/jpeg",
+				"path": "/files/products/undefined-Smile.jpg",
+				"main": true
+			}
+		],
+		"id": 5
+	}
+]
