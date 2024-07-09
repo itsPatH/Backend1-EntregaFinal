@@ -3,7 +3,7 @@ import { engine } from "express-handlebars";
 import http from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import ProductManager from "./managers/productManager.js";
-import CartManager from "./managers/cartManager.js";
+import CartManager from "./managers/CartManager.js";
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";

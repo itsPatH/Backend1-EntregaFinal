@@ -78,5 +78,21 @@
 			}
 		],
 		"id": 5
+	},
+	{
+		"title": "Electric (Single)",
+		"description": "Electric es el sencillo que Katy Perry hizo para la banda sonora de la película de Pokemon",
+		"code": "POKEMON-KATYPERRY",
+		"price": 15,
+		"stock": 10,
+		"category": "Pop",
+		"thumbnails": [
+			{
+				"mimetype": "image/jpeg",
+				"path": "/files/products/undefined-Electric.jpg",
+				"main": true
+			}
+		],
+		"id": 6
 	}
 ]
